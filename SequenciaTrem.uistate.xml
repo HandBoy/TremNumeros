@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2uistate>
+    <!--This is a UI state file - its content describes the user interface settings when the project was last open.
+It is entirely optional and the project will load without it.  If you are placing the project under source control,
+you probably do not want to add any .uistate.xml files to the repository.-->
+    <configurations>
+        <active>
+            <configuration name="HTML5" />
+        </active>
+        <display name="HTML5" />
+    </configurations>
+    <open-tabs>
+        <layout active="1" order="0">Layout 1</layout>
+        <event-sheet order="1">Event sheet 1</event-sheet>
+    </open-tabs>
+    <properties>
+        <property expanded="1" name="About" />
+        <property expanded="1" name="Project settings" />
+        <property expanded="1" name="Window Size" />
+        <property expanded="1" name="Configuration Settings" />
+    </properties>
+    <families-expanded root="1">
+        <family expanded="0" name="Numeros" />
+        <family expanded="0" name="NumerosPlat" />
+        <family expanded="1" name="Inimigos" />
+    </families-expanded>
+    <folders-expanded>
+        <folder expanded="1" path="object-folder/" />
+        <folder expanded="0" path="object-folder/cenario/" />
+        <folder expanded="0" path="object-folder/Inimigos/" />
+        <folder expanded="1" path="layout-folder/" />
+        <folder expanded="0" path="event-folder/" />
+        <folder expanded="0" path="file-folder/" />
+        <folder expanded="1" path="sound-folder/" />
+        <folder expanded="1" path="music-folder/" />
+        <folder expanded="0" path="file-folder/Icons/" />
+        <folder expanded="1" path="animation-folder/sp_Arvore3/" />
+        <folder expanded="1" path="animation-folder/sp_gramas/" />
+        <folder expanded="1" path="animation-folder/sp_Pedra/" />
+        <folder expanded="1" path="animation-folder/sp_nuvem/" />
+        <folder expanded="1" path="animation-folder/disco/" />
+        <folder expanded="1" path="animation-folder/Missil/" />
+        <folder expanded="1" path="animation-folder/morcego/" />
+        <folder expanded="1" path="animation-folder/robo/" />
+        <folder expanded="1" path="animation-folder/explosao/" />
+        <folder expanded="1" path="animation-folder/sp_numero2/" />
+        <folder expanded="1" path="animation-folder/Player/" />
+        <folder expanded="1" path="animation-folder/sp_numero3/" />
+        <folder expanded="1" path="animation-folder/sp_numero5/" />
+        <folder expanded="1" path="animation-folder/sp_numero6/" />
+        <folder expanded="1" path="animation-folder/sp_numero7/" />
+        <folder expanded="1" path="animation-folder/sp_trem/" />
+        <folder expanded="1" path="animation-folder/sp_numero4/" />
+        <folder expanded="1" path="animation-folder/sp_numero1/" />
+        <folder expanded="1" path="animation-folder/sp_vagao/" />
+        <folder expanded="1" path="animation-folder/sp_numero0/" />
+        <folder expanded="1" path="animation-folder/sp_numero9/" />
+        <folder expanded="1" path="animation-folder/sp_numero8/" />
+        <folder expanded="1" path="animation-folder/sp_Jumper/" />
+        <folder expanded="1" path="animation-folder/sp_VoltaNumero/" />
+    </folders-expanded>
+</c2uistate>

@@ -1,0 +1,2267 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable constant="0" name="teste" sid="3719058387983631" static="0" type="number">0</variable>
+        <variable constant="0" name="nErro" sid="7484337697120043" static="0" type="text"></variable>
+        <variable constant="0" name="vErro" sid="1511489953125249" static="0" type="number">0</variable>
+        <variable constant="0" name="v0" sid="1404533611659813" static="0" type="text">[</variable>
+        <variable constant="0" name="v1" sid="1656191178740478" static="0" type="text">[</variable>
+        <variable constant="0" name="v2" sid="8114660978885069" static="0" type="text">[</variable>
+        <variable constant="0" name="v3" sid="1763413976843" static="0" type="text">[</variable>
+        <variable constant="0" name="v4" sid="3061826699911109" static="0" type="text">[</variable>
+        <variable constant="0" name="v5" sid="9777403565918786" static="0" type="text">[</variable>
+        <variable constant="0" name="v6" sid="4025216163192703" static="0" type="text">[</variable>
+        <variable constant="0" name="v7" sid="3303398222783262" static="0" type="text">[</variable>
+        <variable constant="0" name="v8" sid="6962457042537765" static="0" type="text">[</variable>
+        <variable constant="0" name="v9" sid="3786574699349774" static="0" type="text">[</variable>
+        <variable constant="0" name="url" sid="633238680632336" static="0" type="text">http://localhost:8080/gamedu/protected/api/activity/saveresults</variable>
+        <variable constant="0" name="Pontos" sid="6013283677700352" static="0" type="number">0</variable>
+        <variable constant="0" name="won" sid="8038241625064807" static="0" type="number">0</variable>
+        <variable constant="0" name="Acertos" sid="1934702514696107" static="0" type="number">0</variable>
+        <event-block sid="6230322421915306">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="8346638313566084" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Pin" id="0" name="Pin to object" sid="8360937760567864" type="sp_vagao">
+                    <param id="0" name="Pin to">sp_trem</param>
+                    <param id="1" name="Mode">1</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="413766399251272" type="tb_vagao">
+                    <param id="0" name="Pin to">sp_trem</param>
+                    <param id="1" name="Mode">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="6898244865087287" type="System">
+                    <param id="0" name="Variable">won</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="1070182542501615" type="System">
+                    <param id="0" name="Variable">Acertos</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="5362823152130236" type="System">
+                    <param id="0" name="Variable">Pontos</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="0" name="Set text" sid="3959186759934848" type="txt_Mensagem">
+                    <param id="0" name="Text">&quot;Oh, não! Os números foram jogados de seus vagões com a ventania. Perceba a sequência numérica dos vagões e coloque os números de volta, na ordem correta, para que possamos completar a viagem&quot;</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="9875740743899746" type="System">
+                    <param id="0" name="Layer">1</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="9786892522582818" title="Personagem">
+            <sub-events>
+                <event-block any="1" sid="6851874005569107">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="9661856113115818" type="Keyboard">
+                            <param id="0" name="Key">37 (Left arrow)</param>
+                        </condition>
+                        <condition id="2" name="Key is down" sid="5922180626417285" type="Keyboard">
+                            <param id="0" name="Key">39 (Right arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="3510933516614181">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="2524392912084157" type="Keyboard">
+                                    <param id="0" name="Key">39 (Right arrow)</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="4707492890970067" type="Player">
+                                    <param id="0" name="Instance variable">Jogar_Object</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="5819756441047777" type="Player">
+                                    <param id="0" name="Instance variable">Vida</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="1459641276342461" type="Player">
+                                    <param id="0" name="Animation">&quot;Pegar&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="8044008264199299" type="Player">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4730619753685653">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="3847733192783738" type="Keyboard">
+                                    <param id="0" name="Key">39 (Right arrow)</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="7668016765597208" type="Player">
+                                    <param id="0" name="Instance variable">Jogar_Object</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="4339006234558209" type="Player">
+                                    <param id="0" name="Instance variable">Vida</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="2692146617236025" type="Player">
+                                    <param id="0" name="Animation">&quot;Run&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="7564468784230742" type="Player">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1782196342323919">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="7701728354999109" type="Keyboard">
+                                    <param id="0" name="Key">37 (Left arrow)</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="4154359564671626" type="Player">
+                                    <param id="0" name="Instance variable">Jogar_Object</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="7524005505505821" type="Player">
+                                    <param id="0" name="Instance variable">Vida</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="1184142709718723" type="Player">
+                                    <param id="0" name="Animation">&quot;Pegar&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="6609153146096965" type="Player">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9740318098356421">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="7781123364344378" type="Keyboard">
+                                    <param id="0" name="Key">37 (Left arrow)</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="8655335280237699" type="Player">
+                                    <param id="0" name="Instance variable">Jogar_Object</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="2514319080660631" type="Player">
+                                    <param id="0" name="Instance variable">Vida</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="7068332070759075" type="Player">
+                                    <param id="0" name="Animation">&quot;Run&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="6450034527580074" type="Player">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="6141883389939747">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="1483276483653825" type="System" />
+                        <condition id="-8" name="Is boolean instance variable set" sid="2809289499846939" type="Player">
+                            <param id="0" name="Instance variable">Jogar_Object</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="7157328378275769" type="Player">
+                            <param id="0" name="Instance variable">Vida</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="3600644492737052" type="Player">
+                            <param id="0" name="Animation">&quot;IdlePegar&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2694502417334492">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="6491776846952456" type="System" />
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="229146323406372" type="Player">
+                            <param id="0" name="Instance variable">Jogar_Object</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="1641626742263485" type="Player">
+                            <param id="0" name="Instance variable">Vida</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="9700591490486289" type="Player">
+                            <param id="0" name="Animation">&quot;Idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="210154614773004">
+                    <conditions>
+                        <condition id="0" name="On direction selected" sid="7303964006382043" type="TouchGamepad">
+                            <param id="0" name="direction">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="890457682444295" type="Player">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4944880577793957">
+                    <conditions>
+                        <condition behavior="Platform" id="3" name="Is jumping" sid="2038777315300915" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="5118876492959076" type="Player">
+                            <param id="0" name="Animation">&quot;Jump&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5257352769160624">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="2557237111691207" type="Keyboard">
+                            <param id="0" name="Key">65 (A)</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="6362020896694127" type="Player">
+                            <param id="0" name="Object">Numeros</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="7022345137434696" type="Player">
+                            <param id="0" name="Instance variable">Get_Object</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="5195072173782891" type="Numeros">
+                            <param id="0" name="Instance variable">LockTrem</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="9190590460094807" type="Player">
+                            <param id="0" name="Instance variable">Jogar_Object</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="2170653476038512" type="Numeros">
+                            <param id="0" name="X">player.X</param>
+                            <param id="1" name="Y">player.Y-85</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="3189976594487696" type="Player">
+                            <param id="0" name="Instance variable">GetObjectID</param>
+                            <param id="1" name="Value">Numeros.UID</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="4877820157654397" type="Numeros">
+                            <param id="0" name="X">Player.X</param>
+                            <param id="1" name="Y">Player.Y-85</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="5416073391047135" type="System">
+                            <param id="0" name="Seconds">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="3548442936564798" type="Player">
+                            <param id="0" name="Instance variable">Get_Object</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Colocar a caixa em cima da cabeça</comment>
+                <event-block sid="473038799649258">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="7307871808379126" type="Player">
+                            <param id="0" name="Instance variable">Jogar_Object</param>
+                        </condition>
+                        <condition id="-14" name="Pick by unique ID" sid="433883171590176" type="Numeros">
+                            <param id="0" name="Unique ID">player.GetObjectID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="3827450533150832" type="Numeros">
+                            <param id="0" name="X">Player.X</param>
+                            <param id="1" name="Y">Player.Y-85</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="8568307239053575" type="Numeros">
+                            <param id="0" name="Instance variable">PararMove</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9546705875407273">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="1237275181205551" type="Keyboard">
+                            <param id="0" name="Key">65 (A)</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="482252589795108" type="Player">
+                            <param id="0" name="Instance variable">Get_Object</param>
+                        </condition>
+                        <condition id="-14" name="Pick by unique ID" sid="6429103662738341" type="Numeros">
+                            <param id="0" name="Unique ID">player.GetObjectID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="6821478230001717" type="Player">
+                            <param id="0" name="Instance variable">Jogar_Object</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="6433338775434812" type="Player">
+                            <param id="0" name="Instance variable">Get_Object</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="240749022526615" title="Numeros">
+            <sub-events>
+                <event-block sid="7661436941833229">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="4062171051061646" type="System">
+                            <param id="0" name="Interval (seconds)">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="4" name="Set jump strength" sid="6617846064877493" type="sp_numero1">
+                            <param id="0" name="Jump strength">800</param>
+                        </action>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="9536270157995774" type="sp_numero1">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1267005973533429">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="4189604170753239" type="System">
+                            <param id="0" name="Interval (seconds)">4</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="6618897533160831" type="sp_numero3">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5041877597541066">
+                    <conditions>
+                        <condition behavior="Platform3" id="2" name="Is on floor" sid="7262293616682807" type="NumerosPlat" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform3" id="1" name="Set max speed" sid="938798117141235" type="NumerosPlat">
+                            <param id="0" name="Max Speed">200</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="609028608748978">
+                            <conditions>
+                                <condition id="7" inverted="1" name="Is mirrored" sid="8215023511779734" type="NumerosPlat" />
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="1537532729513525" type="Numeros">
+                                    <param id="0" name="Instance variable">PararMove</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform3" id="7" name="Simulate control" sid="7473566078586579" type="NumerosPlat">
+                                    <param id="0" name="Control">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5841601511761516">
+                            <conditions>
+                                <condition id="7" name="Is mirrored" sid="3696834862610308" type="NumerosPlat" />
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="5041540884236764" type="Numeros">
+                                    <param id="0" name="Instance variable">PararMove</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform3" id="7" name="Simulate control" sid="3523970111928919" type="NumerosPlat">
+                                    <param id="0" name="Control">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="8470634796286669">
+                    <conditions>
+                        <condition behavior="Platform3" id="2" inverted="1" name="Is on floor" sid="7554129457655954" type="NumerosPlat" />
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="6900293883357364" type="Numeros">
+                            <param id="0" name="Instance variable">PararMove</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform3" id="1" name="Set max speed" sid="4521152473874218" type="NumerosPlat">
+                            <param id="0" name="Max Speed">100</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="7036880657851307">
+                            <conditions>
+                                <condition id="7" inverted="1" name="Is mirrored" sid="1973371679022143" type="NumerosPlat" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform3" id="7" name="Simulate control" sid="1425792318997569" type="NumerosPlat">
+                                    <param id="0" name="Control">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3037792588803393">
+                            <conditions>
+                                <condition id="7" name="Is mirrored" sid="5378177859313302" type="NumerosPlat" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform3" id="7" name="Simulate control" sid="2981263221907253" type="NumerosPlat">
+                                    <param id="0" name="Control">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="4505338630242833">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="4724083167268125" type="NumerosPlat">
+                            <param id="0" name="Object">sp_Jumper</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform3" id="7" name="Simulate control" sid="9136319066719077" type="NumerosPlat">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2444501962273658">
+                    <conditions>
+                        <condition behavior="Platform" id="3" name="Is jumping" sid="1597412340563263" type="Numeros" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="9863670337722892" type="Numeros">
+                            <param id="0" name="Animation">&quot;Jump&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9627118848690057">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="2970219138435618" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="8832069100920076" type="Numeros">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="143116480764456">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="2625269636079194" type="NumerosPlat">
+                            <param id="0" name="Object">sp_VoltaNumero</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="9686064654529497" type="Numeros">
+                            <param id="0" name="Instance variable">PararMove</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="5320557991379254">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="8954481614102609" type="NumerosPlat">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="X co-ordinate">sp_VoltaNumero.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform3" id="1" name="Set max speed" sid="2969908019585591" type="NumerosPlat">
+                                    <param id="0" name="Max Speed">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="3144182288296682" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action behavior="Platform3" id="1" name="Set max speed" sid="4375425519087791" type="NumerosPlat">
+                                    <param id="0" name="Max Speed">200</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="5443684832309728" type="NumerosPlat">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7438912222733829">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="9129049022143435" type="NumerosPlat">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="X co-ordinate">sp_VoltaNumero.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="9378093610596737" type="NumerosPlat">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="8490048157398909">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="1514633117711475" type="System">
+                                    <param id="0" name="First value">sp_numero3.Sine.CyclePosition</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">0.25</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="7972983554478171" type="sp_numero3">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="1406148625511129" type="sp_numero2">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4647222418760297">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="9803557255802876" type="System">
+                                    <param id="0" name="First value">sp_numero3.Sine.CyclePosition</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">0.75</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="356568185873403" type="sp_numero3">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="1720665843096728" type="sp_numero2">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="892508220868373">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="8406599789309031" type="System">
+                                    <param id="0" name="First value">sp_numero5.Sine.CyclePosition</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">0.25</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="2122618561148757" type="sp_numero5">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1186926450541846">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="2620422540540996" type="System">
+                                    <param id="0" name="First value">sp_numero5.Sine.CyclePosition</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">0.75</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="8898339486868698" type="sp_numero5">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="6716729246752933" title="Acertos">
+            <sub-events>
+                <event-block sid="2645629983408732">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="4273416468601158" type="sp_numero0">
+                            <param id="0" name="Object">sp_vagao</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="2041475031246144" type="sp_numero0">
+                            <param id="0" name="Instance variable">LockTrem</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="284266301921646" type="sp_vagao">
+                            <param id="0" name="Instance variable">PossuiNumero</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="4110737767597099" type="sp_numero0">
+                            <param id="0" name="Instance variable">LockTrem</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="1532362806974281">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="9542085982778006" type="System">
+                                    <param id="0" name="First value">sp_numero0.valor</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">sp_vagao.valor</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="2689879023419198" type="sp_numero0">
+                                    <param id="0" name="X">sp_vagao.X</param>
+                                    <param id="1" name="Y">sp_vagao.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="8131999199898468" type="sp_numero0">
+                                    <param id="0" name="Pin to">sp_vagao</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="1679227659534981" type="System">
+                                    <param id="0" name="Variable">vErro</param>
+                                    <param id="1" name="Value">sp_vagao.UID</param>
+                                </action>
+                                <action id="0" name="Call function" sid="4017875429539275" type="Function">
+                                    <param id="0" name="Name">&quot;addAcertoVagao&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="7833154670321867" type="sp_vagao">
+                                    <param id="0" name="Instance variable">PossuiNumero</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="3926239120567685" type="System">
+                                    <param id="0" name="Variable">Acertos</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="3521954843581019" type="System">
+                                    <param id="0" name="Variable">Pontos</param>
+                                    <param id="1" name="Value">10</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5108282674566718">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="2770581551468233" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="9586303088223673" type="System">
+                                    <param id="0" name="Variable">nErro</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="7035028556584952" type="System">
+                                    <param id="0" name="Variable">vErro</param>
+                                    <param id="1" name="Value">sp_vagao.UID</param>
+                                </action>
+                                <action id="0" name="Call function" sid="5008334822005705" type="Function">
+                                    <param id="0" name="Name">&quot;addErroVagao&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="-11" name="Subtract from" sid="2799484565892324" type="System">
+                                    <param id="0" name="Variable">Pontos</param>
+                                    <param id="1" name="Value">5</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="4955971186434947" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="157444937963045" type="sp_numero0">
+                                    <param id="0" name="Instance variable">LockTrem</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="8925158156203164">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="6909531855821388" type="sp_numero1">
+                            <param id="0" name="Object">sp_vagao</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="2813472988269077" type="sp_numero1">
+                            <param id="0" name="Instance variable">LockTrem</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="253917689070502" type="sp_vagao">
+                            <param id="0" name="Instance variable">PossuiNumero</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="7505856323789904" type="sp_numero1">
+                            <param id="0" name="Instance variable">LockTrem</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="8915739490890257">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="1155638444395149" type="System">
+                                    <param id="0" name="First value">sp_numero1.valor</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">sp_vagao.valor</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="1003513254384536" type="sp_numero1">
+                                    <param id="0" name="X">sp_vagao.X</param>
+                                    <param id="1" name="Y">sp_vagao.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="3426243831975244" type="sp_numero1">
+                                    <param id="0" name="Pin to">sp_vagao</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="9002375657442003" type="sp_vagao">
+                                    <param id="0" name="Instance variable">PossuiNumero</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="9581978293038275" type="System">
+                                    <param id="0" name="Variable">Acertos</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="8265470903881568" type="System">
+                                    <param id="0" name="Variable">Pontos</param>
+                                    <param id="1" name="Value">10</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="3861918556202822" type="System">
+                                    <param id="0" name="Variable">vErro</param>
+                                    <param id="1" name="Value">sp_vagao.UID</param>
+                                </action>
+                                <action id="0" name="Call function" sid="3115111665966207" type="Function">
+                                    <param id="0" name="Name">&quot;addAcertoVagao&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="8488454903169972">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="8360226359766472" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="6339761389940025" type="System">
+                                    <param id="0" name="Variable">nErro</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="3907561187877432" type="System">
+                                    <param id="0" name="Variable">vErro</param>
+                                    <param id="1" name="Value">sp_vagao.UID</param>
+                                </action>
+                                <action id="0" name="Call function" sid="9270832433240356" type="Function">
+                                    <param id="0" name="Name">&quot;addErroVagao&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="-11" name="Subtract from" sid="5047710961959934" type="System">
+                                    <param id="0" name="Variable">Pontos</param>
+                                    <param id="1" name="Value">5</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="2448671877066186" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="5843183396769569" type="sp_numero1">
+                                    <param id="0" name="Instance variable">LockTrem</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="5408862264576623">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="7473867678241866" type="sp_numero2">
+                            <param id="0" name="Object">sp_vagao</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="7048169288440688" type="sp_numero2">
+                            <param id="0" name="Instance variable">LockTrem</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="3138136961894655" type="sp_vagao">
+                            <param id="0" name="Instance variable">PossuiNumero</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="6986838146981962" type="sp_numero2">
+                            <param id="0" name="Instance variable">LockTrem</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="185421906030297">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="2412099973498668" type="System">
+                                    <param id="0" name="First value">sp_numero2.valor</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">sp_vagao.valor</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="229731532033553" type="sp_numero2">
+                                    <param id="0" name="X">sp_vagao.X</param>
+                                    <param id="1" name="Y">sp_vagao.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="1742975480580699" type="sp_numero2">
+                                    <param id="0" name="Pin to">sp_vagao</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="8966751965274267" type="sp_vagao">
+                                    <param id="0" name="Instance variable">PossuiNumero</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="6430515997971054" type="System">
+                                    <param id="0" name="Variable">Acertos</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="6140692018027978" type="System">
+                                    <param id="0" name="Variable">Pontos</param>
+                                    <param id="1" name="Value">10</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="7606521425131598" type="System">
+                                    <param id="0" name="Variable">vErro</param>
+                                    <param id="1" name="Value">sp_vagao.UID</param>
+                                </action>
+                                <action id="0" name="Call function" sid="4744025964738731" type="Function">
+                                    <param id="0" name="Name">&quot;addAcertoVagao&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="8860497925845986">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="6189085725582328" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="8242003996096811" type="System">
+                                    <param id="0" name="Variable">nErro</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="721641798257866" type="System">
+                                    <param id="0" name="Variable">vErro</param>
+                                    <param id="1" name="Value">sp_vagao.UID</param>
+                                </action>
+                                <action id="0" name="Call function" sid="9249987487023938" type="Function">
+                                    <param id="0" name="Name">&quot;addErroVagao&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="-11" name="Subtract from" sid="1990017267965766" type="System">
+                                    <param id="0" name="Variable">Pontos</param>
+                                    <param id="1" name="Value">5</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="7629548732746904" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="8381687577078139" type="sp_numero2">
+                                    <param id="0" name="Instance variable">LockTrem</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="4511116997747576">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="5362346446274633" type="sp_numero3">
+                            <param id="0" name="Object">sp_vagao</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="1927640486702839" type="sp_numero3">
+                            <param id="0" name="Instance variable">LockTrem</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="1962972657171761" type="sp_vagao">
+                            <param id="0" name="Instance variable">PossuiNumero</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="6013272678148625" type="sp_numero3">
+                            <param id="0" name="Instance variable">LockTrem</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="5467042383147586">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="4267389486139406" type="System">
+                                    <param id="0" name="First value">sp_numero3.valor</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">sp_vagao.valor</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="5428683877390992" type="sp_numero3">
+                                    <param id="0" name="X">sp_vagao.X</param>
+                                    <param id="1" name="Y">sp_vagao.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="3730264705866095" type="sp_numero3">
+                                    <param id="0" name="Pin to">sp_vagao</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="4847641749135584" type="System">
+                                    <param id="0" name="Variable">Acertos</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="8364859670130767" type="System">
+                                    <param id="0" name="Variable">Pontos</param>
+                                    <param id="1" name="Value">10</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="8873320780595683" type="System">
+                                    <param id="0" name="Variable">vErro</param>
+                                    <param id="1" name="Value">sp_vagao.UID</param>
+                                </action>
+                                <action id="0" name="Call function" sid="4796717311524362" type="Function">
+                                    <param id="0" name="Name">&quot;addAcertoVagao&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6013969742739512">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="4092499294415354" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="3598502791090041" type="System">
+                                    <param id="0" name="Variable">nErro</param>
+                                    <param id="1" name="Value">3</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="1375919059832735" type="System">
+                                    <param id="0" name="Variable">vErro</param>
+                                    <param id="1" name="Value">sp_vagao.UID</param>
+                                </action>
+                                <action id="0" name="Call function" sid="3268486269026736" type="Function">
+                                    <param id="0" name="Name">&quot;addErroVagao&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="-11" name="Subtract from" sid="4410651291124776" type="System">
+                                    <param id="0" name="Variable">Pontos</param>
+                                    <param id="1" name="Value">5</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="8930505705663382" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="8023434577881237" type="sp_numero3">
+                                    <param id="0" name="Instance variable">LockTrem</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="3698097079249328">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="9259630950414167" type="sp_numero4">
+                            <param id="0" name="Object">sp_vagao</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="3475652267453406" type="sp_numero4">
+                            <param id="0" name="Instance variable">LockTrem</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="4737291279909972" type="sp_vagao">
+                            <param id="0" name="Instance variable">PossuiNumero</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="5724932027577999" type="sp_numero4">
+                            <param id="0" name="Instance variable">LockTrem</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="8575210709051714">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="5540397232296767" type="System">
+                                    <param id="0" name="First value">sp_numero4.valor</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">sp_vagao.valor</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="8031019384079994" type="sp_numero4">
+                                    <param id="0" name="X">sp_vagao.X</param>
+                                    <param id="1" name="Y">sp_vagao.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="746317002991619" type="sp_numero4">
+                                    <param id="0" name="Pin to">sp_vagao</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="3259847719840232" type="sp_vagao">
+                                    <param id="0" name="Instance variable">PossuiNumero</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="6395012140681728" type="System">
+                                    <param id="0" name="Variable">Acertos</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="4345770970475339" type="System">
+                                    <param id="0" name="Variable">Pontos</param>
+                                    <param id="1" name="Value">10</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="3623963885874193" type="System">
+                                    <param id="0" name="Variable">vErro</param>
+                                    <param id="1" name="Value">sp_vagao.UID</param>
+                                </action>
+                                <action id="0" name="Call function" sid="5522269020342355" type="Function">
+                                    <param id="0" name="Name">&quot;addAcertoVagao&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7040270288378299">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="280146038805427" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="2212354831072218" type="System">
+                                    <param id="0" name="Variable">nErro</param>
+                                    <param id="1" name="Value">4</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="7824166088057739" type="System">
+                                    <param id="0" name="Variable">vErro</param>
+                                    <param id="1" name="Value">sp_vagao.UID</param>
+                                </action>
+                                <action id="0" name="Call function" sid="1536624378113114" type="Function">
+                                    <param id="0" name="Name">&quot;addErroVagao&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="-11" name="Subtract from" sid="5076275084211638" type="System">
+                                    <param id="0" name="Variable">Pontos</param>
+                                    <param id="1" name="Value">5</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="8107744025972497" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="4164754307213499" type="sp_numero4">
+                                    <param id="0" name="Instance variable">LockTrem</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="9192333111856379">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="3771939260444629" type="sp_numero5">
+                            <param id="0" name="Object">sp_vagao</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="9737726977302188" type="sp_numero5">
+                            <param id="0" name="Instance variable">LockTrem</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="1782097142712235" type="sp_vagao">
+                            <param id="0" name="Instance variable">PossuiNumero</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="3821796141616778" type="sp_numero5">
+                            <param id="0" name="Instance variable">LockTrem</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="5650794170889401">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="1855877635504717" type="System">
+                                    <param id="0" name="First value">sp_numero5.valor</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">sp_vagao.valor</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="6092072175722368" type="sp_numero5">
+                                    <param id="0" name="X">sp_vagao.X</param>
+                                    <param id="1" name="Y">sp_vagao.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="7431354027781463" type="sp_numero5">
+                                    <param id="0" name="Pin to">sp_vagao</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="2248636342794523" type="sp_vagao">
+                                    <param id="0" name="Instance variable">PossuiNumero</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="7855048889177014" type="System">
+                                    <param id="0" name="Variable">Acertos</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="4016189677288207" type="System">
+                                    <param id="0" name="Variable">Pontos</param>
+                                    <param id="1" name="Value">10</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="7959458053499266" type="System">
+                                    <param id="0" name="Variable">vErro</param>
+                                    <param id="1" name="Value">sp_vagao.UID</param>
+                                </action>
+                                <action id="0" name="Call function" sid="1446748296475942" type="Function">
+                                    <param id="0" name="Name">&quot;addAcertoVagao&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2247993592380292">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="9400641128536959" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="4956990995426292" type="System">
+                                    <param id="0" name="Variable">nErro</param>
+                                    <param id="1" name="Value">5</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="1838678004289692" type="System">
+                                    <param id="0" name="Variable">vErro</param>
+                                    <param id="1" name="Value">sp_vagao.UID</param>
+                                </action>
+                                <action id="0" name="Call function" sid="1378421202996197" type="Function">
+                                    <param id="0" name="Name">&quot;addErroVagao&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="-11" name="Subtract from" sid="44487386348333" type="System">
+                                    <param id="0" name="Variable">Pontos</param>
+                                    <param id="1" name="Value">5</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="4527367219484835" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="7761023675333587" type="sp_numero5">
+                                    <param id="0" name="Instance variable">LockTrem</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="4635984742408239">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="4732314541911245" type="sp_numero6">
+                            <param id="0" name="Object">sp_vagao</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="5917407199580813" type="sp_numero6">
+                            <param id="0" name="Instance variable">LockTrem</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="649979032190987" type="sp_vagao">
+                            <param id="0" name="Instance variable">PossuiNumero</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="1938903702149359" type="sp_numero6">
+                            <param id="0" name="Instance variable">LockTrem</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="5258694455678057">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="8554302705548515" type="System">
+                                    <param id="0" name="First value">sp_numero6.valor</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">sp_vagao.valor</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="7797430911720264" type="sp_numero6">
+                                    <param id="0" name="X">sp_vagao.X</param>
+                                    <param id="1" name="Y">sp_vagao.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="2291783619768613" type="sp_numero6">
+                                    <param id="0" name="Pin to">sp_vagao</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="7743358134055873" type="sp_vagao">
+                                    <param id="0" name="Instance variable">PossuiNumero</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="5200812254688481" type="System">
+                                    <param id="0" name="Variable">Acertos</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="1907996750788305" type="System">
+                                    <param id="0" name="Variable">Pontos</param>
+                                    <param id="1" name="Value">10</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="9362196345612143" type="System">
+                                    <param id="0" name="Variable">vErro</param>
+                                    <param id="1" name="Value">sp_vagao.UID</param>
+                                </action>
+                                <action id="0" name="Call function" sid="2555533670094526" type="Function">
+                                    <param id="0" name="Name">&quot;addAcertoVagao&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1179137328932357">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="4300095003424065" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="2136960752475942" type="System">
+                                    <param id="0" name="Variable">nErro</param>
+                                    <param id="1" name="Value">6</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="6003277644684723" type="System">
+                                    <param id="0" name="Variable">vErro</param>
+                                    <param id="1" name="Value">sp_vagao.UID</param>
+                                </action>
+                                <action id="0" name="Call function" sid="4996367253139426" type="Function">
+                                    <param id="0" name="Name">&quot;addErroVagao&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="-11" name="Subtract from" sid="5048461226681297" type="System">
+                                    <param id="0" name="Variable">Pontos</param>
+                                    <param id="1" name="Value">5</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="9529406610143803" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="2913121657778367" type="sp_numero6">
+                                    <param id="0" name="Instance variable">LockTrem</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="2584161490066313">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="1640653558939247" type="sp_numero7">
+                            <param id="0" name="Object">sp_vagao</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="9367128912313539" type="sp_numero7">
+                            <param id="0" name="Instance variable">LockTrem</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="2260191131091645" type="sp_vagao">
+                            <param id="0" name="Instance variable">PossuiNumero</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="5906534782301142" type="sp_numero7">
+                            <param id="0" name="Instance variable">LockTrem</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="8269958488933253">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="2035123182093779" type="System">
+                                    <param id="0" name="First value">sp_numero7.valor</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">sp_vagao.valor</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="6733425086406309" type="sp_numero7">
+                                    <param id="0" name="X">sp_vagao.X</param>
+                                    <param id="1" name="Y">sp_vagao.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="221376332830729" type="sp_numero7">
+                                    <param id="0" name="Pin to">sp_vagao</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="8478283421083842" type="sp_vagao">
+                                    <param id="0" name="Instance variable">PossuiNumero</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="3646730838436211" type="System">
+                                    <param id="0" name="Variable">Acertos</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="6168887572402504" type="System">
+                                    <param id="0" name="Variable">Pontos</param>
+                                    <param id="1" name="Value">10</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="4400326067370223" type="System">
+                                    <param id="0" name="Variable">vErro</param>
+                                    <param id="1" name="Value">sp_vagao.UID</param>
+                                </action>
+                                <action id="0" name="Call function" sid="8806311668112952" type="Function">
+                                    <param id="0" name="Name">&quot;addAcertoVagao&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3532995987809016">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="3410837006765208" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="2680827538667593" type="System">
+                                    <param id="0" name="Variable">nErro</param>
+                                    <param id="1" name="Value">7</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="6747400628305765" type="System">
+                                    <param id="0" name="Variable">vErro</param>
+                                    <param id="1" name="Value">sp_vagao.UID</param>
+                                </action>
+                                <action id="0" name="Call function" sid="5974113617387123" type="Function">
+                                    <param id="0" name="Name">&quot;addErroVagao&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="-11" name="Subtract from" sid="2121582304192636" type="System">
+                                    <param id="0" name="Variable">Pontos</param>
+                                    <param id="1" name="Value">5</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="9548788512898007" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="3267442011640614" type="sp_numero7">
+                                    <param id="0" name="Instance variable">LockTrem</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="3201403253672752">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="9473297717358475" type="sp_numero8">
+                            <param id="0" name="Object">sp_vagao</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="5848818695991063" type="sp_numero8">
+                            <param id="0" name="Instance variable">LockTrem</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="8585492672923731" type="sp_vagao">
+                            <param id="0" name="Instance variable">PossuiNumero</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="2586412954649834" type="sp_numero8">
+                            <param id="0" name="Instance variable">LockTrem</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="8064002395552235">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="9349526494809327" type="System">
+                                    <param id="0" name="First value">sp_numero8.valor</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">sp_vagao.valor</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="5759803437104296" type="sp_numero8">
+                                    <param id="0" name="X">sp_vagao.X</param>
+                                    <param id="1" name="Y">sp_vagao.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="9138055005106677" type="sp_numero8">
+                                    <param id="0" name="Pin to">sp_vagao</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="2132306752959302" type="sp_vagao">
+                                    <param id="0" name="Instance variable">PossuiNumero</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="321198634229181" type="System">
+                                    <param id="0" name="Variable">Acertos</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="751481933123691" type="System">
+                                    <param id="0" name="Variable">Pontos</param>
+                                    <param id="1" name="Value">10</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="8900146480565857" type="System">
+                                    <param id="0" name="Variable">vErro</param>
+                                    <param id="1" name="Value">sp_vagao.UID</param>
+                                </action>
+                                <action id="0" name="Call function" sid="9597784241645302" type="Function">
+                                    <param id="0" name="Name">&quot;addAcertoVagao&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1236992139470781">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="6994652914342469" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="5582493967503096" type="System">
+                                    <param id="0" name="Variable">nErro</param>
+                                    <param id="1" name="Value">8</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="4256636897023283" type="System">
+                                    <param id="0" name="Variable">vErro</param>
+                                    <param id="1" name="Value">sp_vagao.UID</param>
+                                </action>
+                                <action id="0" name="Call function" sid="5312721462884247" type="Function">
+                                    <param id="0" name="Name">&quot;addErroVagao&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="-11" name="Subtract from" sid="3203619065312198" type="System">
+                                    <param id="0" name="Variable">Pontos</param>
+                                    <param id="1" name="Value">5</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="3759542682336294" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="751800043950666" type="sp_numero8">
+                                    <param id="0" name="Instance variable">LockTrem</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="5512113053607723">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="9969029709686767" type="sp_numero9">
+                            <param id="0" name="Object">sp_vagao</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="6278177970471438" type="sp_numero9">
+                            <param id="0" name="Instance variable">LockTrem</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="2527792269205998" type="sp_vagao">
+                            <param id="0" name="Instance variable">PossuiNumero</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="5358879982369558" type="sp_numero9">
+                            <param id="0" name="Instance variable">LockTrem</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="6915611019370335">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="244733973547373" type="System">
+                                    <param id="0" name="First value">sp_numero9.valor</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">sp_vagao.valor</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="9115915159871776" type="sp_numero9">
+                                    <param id="0" name="X">sp_vagao.X</param>
+                                    <param id="1" name="Y">sp_vagao.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="637302439595483" type="sp_numero9">
+                                    <param id="0" name="Pin to">sp_vagao</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="9323709482737977" type="sp_vagao">
+                                    <param id="0" name="Instance variable">PossuiNumero</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="8688823592769657" type="System">
+                                    <param id="0" name="Variable">Acertos</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="1370349604132095" type="System">
+                                    <param id="0" name="Variable">Pontos</param>
+                                    <param id="1" name="Value">10</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="5798004179584452" type="System">
+                                    <param id="0" name="Variable">vErro</param>
+                                    <param id="1" name="Value">sp_vagao.UID</param>
+                                </action>
+                                <action id="0" name="Call function" sid="1404812649901696" type="Function">
+                                    <param id="0" name="Name">&quot;addAcertoVagao&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5202635613699447">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="854538012609363" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="9697011606084856" type="System">
+                                    <param id="0" name="Variable">nErro</param>
+                                    <param id="1" name="Value">9</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="1569961528649732" type="System">
+                                    <param id="0" name="Variable">vErro</param>
+                                    <param id="1" name="Value">sp_vagao.UID</param>
+                                </action>
+                                <action id="0" name="Call function" sid="6228543348401267" type="Function">
+                                    <param id="0" name="Name">&quot;addErroVagao&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="-11" name="Subtract from" sid="9304514720338221" type="System">
+                                    <param id="0" name="Variable">Pontos</param>
+                                    <param id="1" name="Value">5</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="8513795481784145" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="390798700955933" type="sp_numero9">
+                                    <param id="0" name="Instance variable">LockTrem</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="9318640329724537" title="Inimigos">
+            <sub-events>
+                <event-block any="1" sid="7709929625174926">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="7126163361269824" type="Missil">
+                            <param id="0" name="Object">tb_ChaoJumT</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="9578154070155859" type="Missil">
+                            <param id="0" name="Object">tb_Chao_Colid</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="62573074490743" type="Missil">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="5362105470962883" type="Missil">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="7006783037571646" type="Missil">
+                            <param id="0" name="Object">explosao</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="7348272070166965" type="Missil" />
+                    </actions>
+                </event-block>
+                <event-block sid="1520248971580689">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="9547441395583283" type="System">
+                            <param id="0" name="Interval (seconds)">2</param>
+                        </condition>
+                        <condition id="-3" name="Is on-screen" sid="9882099597471191" type="disco" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="1408168012864382" type="disco">
+                            <param id="0" name="Object">Missil</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5877127265687573">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="941631265488109" type="System">
+                            <param id="0" name="First value">robo.Sine.CyclePosition</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Second value">0.25</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="4966523097497723" type="robo">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="2591820076639297" type="robo">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6383086046173436">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="4559676276477373" type="System">
+                            <param id="0" name="First value">robo.Sine.CyclePosition</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Second value">0.75</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="4463215609743485" type="robo">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="2583122283770972" type="robo">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5536841831215552">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="937539172280357" type="Player">
+                            <param id="0" name="Object">Inimigos</param>
+                        </condition>
+                        <condition behavior="Flash" id="0" inverted="1" name="Is flashing" sid="9436499437830701" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="5198793644482333" type="System">
+                            <param id="0" name="Variable">Pontos</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="8878397974070785" type="Player">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4177914687372105">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="3277529967263399" type="explosao">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="5669585671853538" type="explosao" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="8883353498159034" title="Logica GamePlay">
+            <sub-events>
+                <event-block sid="4132488444222882">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="4869110846750808" type="Player">
+                            <param id="0" name="Object">sp_trem</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="7635793940013059" type="System">
+                            <param id="0" name="Variable">won</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="11" name="Set enabled" sid="4836503503565006" type="Player">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="7098620906145113" type="System">
+                            <param id="0" name="Layer">1</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2463496029554607">
+                    <conditions>
+                        <condition id="0" name="On clicked" sid="26755604308852" type="bt_Button" />
+                        <condition id="-14" name="Compare variable" sid="7671268612162719" type="System">
+                            <param id="0" name="Variable">won</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="4011355931621743" type="txt_Mensagem">
+                            <param id="0" name="Text">&quot;Use as setas ← ↑ → ↓ para movimentar o personagem.&#x0D;&#x0A;Aperte A para pegar um numero &quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="6810965906635262" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="422820336523077" type="System">
+                            <param id="0" name="Variable">won</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1322830006629704">
+                    <conditions>
+                        <condition id="0" name="On clicked" sid="403674377594489" type="bt_Button" />
+                        <condition id="-14" name="Compare variable" sid="7760156858556607" type="System">
+                            <param id="0" name="Variable">won</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="6128177203193383" type="System">
+                            <param id="0" name="Layer">1</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action behavior="Platform" id="11" name="Set enabled" sid="6200356874000067" type="Player">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6885513805820636">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="5788955298615769" type="System">
+                            <param id="0" name="First value">Acertos</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Second value">10</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="1353251099772331" type="System">
+                            <param id="0" name="Variable">won</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="4601623364967282" type="System">
+                            <param id="0" name="Variable">won</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="932759300231793" type="seta">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="5394094555293267" type="seta">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">10.0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3991720055131093">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="6585160642431344" type="Player">
+                            <param id="0" name="Object">tb_token</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="9969282849227068" type="System">
+                            <param id="0" name="Variable">won</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="3115956742993376" type="System">
+                            <param id="0" name="Layer">1</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="7654173446690698" type="txt_Mensagem">
+                            <param id="0" name="Text">&quot;Obrigado jovem matemático, agora posso seguir minha jornada em paz&quot;</param>
+                        </action>
+                        <action behavior="Platform" id="11" name="Set enabled" sid="684048342059984" type="Player">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="4456896504163233" type="sp_trem">
+                            <param id="0" name="Animation">&quot;Fala&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="2291147907432835" type="seta">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4127530779125656">
+                    <conditions>
+                        <condition id="0" name="On clicked" sid="8212399493377723" type="bt_Button" />
+                        <condition id="-14" name="Compare variable" sid="9648535156364993" type="System">
+                            <param id="0" name="Variable">won</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Post to URL" sid="4745011240305784" type="AJAX">
+                            <param id="0" name="Tag">&quot;certo&quot;</param>
+                            <param id="1" name="URL">url</param>
+                            <param id="2" name="Data">&quot;name=tremnumerico&amp;data={&quot; &amp; v0 &amp; &quot;,&quot; &amp; v1&amp; &quot;,&quot; &amp; v2 &amp; &quot;,&quot; &amp; v3 &amp; &quot;,&quot; &amp; v4 &amp; &quot;,&quot; &amp; v5 &amp; &quot;,&quot; &amp; v6 &amp; &quot;,&quot; &amp; v7 &amp; &quot;,&quot; &amp; v8 &amp; &quot;,&quot; &amp; v9 &amp;&quot;}&quot;</param>
+                            <param id="3" name="Method">&quot;POST&quot;</param>
+                        </action>
+                        <action disabled="1" id="0" name="Set text" sid="9090638134960074" type="txt_teste">
+                            <param id="0" name="Text">&quot;name=tremnumerico&amp;data={&quot; &amp; v0 &amp; &quot;,&quot; &amp; v1&amp; &quot;,&quot; &amp; v2 &amp; &quot;,&quot; &amp; v3 &amp; &quot;,&quot; &amp; v4 &amp; &quot;,&quot; &amp; v5 &amp; &quot;,&quot; &amp; v6 &amp; &quot;,&quot; &amp; v7 &amp; &quot;,&quot; &amp; v8 &amp; &quot;,&quot; &amp; v9 &amp;&quot;}&quot;</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="2818373423687534" type="System">
+                            <param id="0" name="Layer">1</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8827746558181399" type="System">
+                            <param id="0" name="Variable">won</param>
+                            <param id="1" name="Value">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9196441677309885">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="6588023729990955" type="System">
+                            <param id="0" name="Variable">won</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="9175415420229333" type="seta">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="5548553699700729" type="sp_trem">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="695826716924491" type="sp_trem">
+                            <param id="0" name="Animation">&quot;Run&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="Platform" id="11" name="Set enabled" sid="4654652303936234" type="Player">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="3162919168692135" type="System">
+                            <param id="0" name="Seconds">5</param>
+                        </action>
+                        <action id="-26" name="Restart layout" sid="8402645403217322" type="System" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="5234058443638289">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="1974917976317007" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="7503002548949973" type="txt_teste">
+                    <param id="0" name="Text">&quot;name=tremnumerico&amp;data={&quot; &amp; v0 &amp; &quot;,&quot; &amp; v1&amp; &quot;,&quot; &amp; v2 &amp; &quot;,&quot; &amp; v3 &amp; &quot;,&quot; &amp; v4 &amp; &quot;,&quot; &amp; v5 &amp; &quot;,&quot; &amp; v6 &amp; &quot;,&quot; &amp; v7 &amp; &quot;,&quot; &amp; v8 &amp; &quot;,&quot; &amp; v9 &amp;&quot;}&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="9476472187116325" type="txt_pontuacao">
+                    <param id="0" name="Text">&quot;Pontos: &quot; &amp; Pontos</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5348505893549583">
+            <conditions>
+                <condition id="0" name="On function" sid="9209403599081879" type="Function">
+                    <param id="0" name="Name">&quot;addErroVagao&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="7600711200521919">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="7763716273737411" type="System">
+                            <param id="0" name="Variable">vErro</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">90</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="145217526019713" type="System">
+                            <param id="0" name="Variable">v0</param>
+                            <param id="1" name="Value">v0&amp; nErro &amp; &quot;,&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4687522445837664">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="2498190405276198" type="System">
+                            <param id="0" name="Variable">vErro</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">27</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="7850735856586686" type="System">
+                            <param id="0" name="Variable">v1</param>
+                            <param id="1" name="Value">v1&amp; nErro &amp; &quot;,&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1272316710176652">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="6074933912659163" type="System">
+                            <param id="0" name="Variable">vErro</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">28</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="3640924352448667" type="System">
+                            <param id="0" name="Variable">v2</param>
+                            <param id="1" name="Value">v2&amp; nErro &amp; &quot;,&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5405156000246116">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="3847823347853115" type="System">
+                            <param id="0" name="Variable">vErro</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">29</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="9812844790931327" type="System">
+                            <param id="0" name="Variable">v3</param>
+                            <param id="1" name="Value">v3&amp; nErro &amp; &quot;,&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2561972898506885">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="1171402508275592" type="System">
+                            <param id="0" name="Variable">vErro</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">30</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="4649736659070989" type="System">
+                            <param id="0" name="Variable">v4</param>
+                            <param id="1" name="Value">v4&amp; nErro &amp; &quot;,&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5179564996329955">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="8327428862091774" type="System">
+                            <param id="0" name="Variable">vErro</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">31</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="291034988211857" type="System">
+                            <param id="0" name="Variable">v5</param>
+                            <param id="1" name="Value">v5&amp; nErro &amp; &quot;,&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4621944115731995">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="2299280591834631" type="System">
+                            <param id="0" name="Variable">vErro</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">32</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="1181567544017538" type="System">
+                            <param id="0" name="Variable">v6</param>
+                            <param id="1" name="Value">v6&amp; nErro &amp; &quot;,&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7713354056106277">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="4000280402381963" type="System">
+                            <param id="0" name="Variable">vErro</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">33</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="451491884303219" type="System">
+                            <param id="0" name="Variable">v7</param>
+                            <param id="1" name="Value">v7&amp; nErro &amp; &quot;,&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7551741386645121">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="874882832153297" type="System">
+                            <param id="0" name="Variable">vErro</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">34</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="4709371103059356" type="System">
+                            <param id="0" name="Variable">v8</param>
+                            <param id="1" name="Value">v8&amp; nErro &amp; &quot;,&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4368491315909616">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="3223492151622177" type="System">
+                            <param id="0" name="Variable">vErro</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">89</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="691495137384449" type="System">
+                            <param id="0" name="Variable">v9</param>
+                            <param id="1" name="Value">v9&amp; nErro &amp; &quot;,&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="2510996576157217">
+            <conditions>
+                <condition id="0" name="On function" sid="65843410202806" type="Function">
+                    <param id="0" name="Name">&quot;addAcertoVagao&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="872201905746433">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="2538138752086457" type="System">
+                            <param id="0" name="Variable">vErro</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">90</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="1229334343362726" type="System">
+                            <param id="0" name="Variable">v0</param>
+                            <param id="1" name="Value">v0&amp;  &quot;0]&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8621122554741285">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="4078425009128348" type="System">
+                            <param id="0" name="Variable">vErro</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">27</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="5452328441068147" type="System">
+                            <param id="0" name="Variable">v1</param>
+                            <param id="1" name="Value">v1&amp;  &quot;1]&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8525917708042575">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="4603593072135505" type="System">
+                            <param id="0" name="Variable">vErro</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">28</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="9034351769432638" type="System">
+                            <param id="0" name="Variable">v2</param>
+                            <param id="1" name="Value">v2&amp;  &quot;2]&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8562140486841904">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="7894766173426548" type="System">
+                            <param id="0" name="Variable">vErro</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">29</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="2154840985645504" type="System">
+                            <param id="0" name="Variable">v3</param>
+                            <param id="1" name="Value">v3&amp;  &quot;3]&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8153481937694604">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="5622667357646203" type="System">
+                            <param id="0" name="Variable">vErro</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">30</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="8165330838352964" type="System">
+                            <param id="0" name="Variable">v4</param>
+                            <param id="1" name="Value">v4&amp;  &quot;4]&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3280295326089494">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="2146572060277084" type="System">
+                            <param id="0" name="Variable">vErro</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">31</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="7364278788258057" type="System">
+                            <param id="0" name="Variable">v5</param>
+                            <param id="1" name="Value">v5&amp;  &quot;5]&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9006311667767307">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="4522223340274333" type="System">
+                            <param id="0" name="Variable">vErro</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">32</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="6605878061791727" type="System">
+                            <param id="0" name="Variable">v6</param>
+                            <param id="1" name="Value">v6&amp;  &quot;6]&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="53510308650685">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="9206123275184651" type="System">
+                            <param id="0" name="Variable">vErro</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">33</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="337681391168692" type="System">
+                            <param id="0" name="Variable">v7</param>
+                            <param id="1" name="Value">v7&amp;  &quot;7]&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6101628925544883">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="2690256538728485" type="System">
+                            <param id="0" name="Variable">vErro</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">34</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="7780175981356602" type="System">
+                            <param id="0" name="Variable">v8</param>
+                            <param id="1" name="Value">v8&amp;  &quot;8]&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3497335825181194">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="8952948825474152" type="System">
+                            <param id="0" name="Variable">vErro</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">89</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="1914878394387597" type="System">
+                            <param id="0" name="Variable">v9</param>
+                            <param id="1" name="Value">v9&amp;  &quot;9]&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block disabled="1" sid="3564913685432114">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="5003260217787188" type="Numeros">
+                    <param id="0" name="Object">sp_vagao</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="1152996200164538" type="Numeros">
+                    <param id="0" name="Instance variable">LockTrem</param>
+                </condition>
+                <condition disabled="1" id="-8" inverted="1" name="Is boolean instance variable set" sid="704943521414095" type="sp_vagao">
+                    <param id="0" name="Instance variable">PossuiNumero</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="7801243463393529" type="Numeros">
+                    <param id="0" name="Instance variable">spriteUID</param>
+                    <param id="1" name="Value">sp_vagao.UID</param>
+                </action>
+                <action id="0" name="Set text" sid="9731912731737451" type="txt_pontuacao">
+                    <param id="0" name="Text">&quot;Tocou &quot; &amp; Numeros.valor  &amp; &quot; UID &quot; &amp; Player.GetObjectID &amp;  &quot; Sprite: &quot; &amp; sp_vagao.valor</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block disabled="1" sid="4175916157837689">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="3215578178304256" type="System">
+                            <param id="0" name="First value">Numeros.valor</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">sp_vagao.valor</param>
+                        </condition>
+                        <condition disabled="1" id="-14" name="Pick by unique ID" sid="7156194899059418" type="sp_vagao">
+                            <param id="0" name="Unique ID">Numeros.spriteUID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="985849337685429" type="Numeros">
+                            <param id="0" name="Instance variable">LockTrem</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="4540184145042335" type="Numeros">
+                            <param id="0" name="X">sp_vagao.X</param>
+                            <param id="1" name="Y">sp_vagao.Y</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="3163907288135493" type="Numeros">
+                            <param id="0" name="Pin to">sp_vagao</param>
+                            <param id="1" name="Mode">1</param>
+                        </action>
+                        <action disabled="1" id="-10" name="Add to" sid="825287622409707" type="System">
+                            <param id="0" name="Variable">Acertos</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action disabled="1" id="-10" name="Add to" sid="3470696444652614" type="System">
+                            <param id="0" name="Variable">Pontos</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="3335541202909795" type="System">
+                            <param id="0" name="Variable">vErro</param>
+                            <param id="1" name="Value">sp_vagao.UID</param>
+                        </action>
+                        <action id="0" name="Call function" sid="5991054911080037" type="Function">
+                            <param id="0" name="Name">&quot;addAcertoVagao&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Set text" sid="7620658140493908" type="txt_pontuacao">
+                            <param id="0" name="Text">&quot;Acerto &quot; &amp; Numeros.valor  &amp; &quot; UID &quot; &amp; Player.GetObjectID &amp;  &quot; Sprite: &quot; &amp; sp_vagao.valor</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="6665783553604048">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="847760603507107" type="System" />
+                        <condition disabled="1" id="-14" name="Pick by unique ID" sid="6394379988156624" type="sp_vagao">
+                            <param id="0" name="Unique ID">Numeros.spriteUID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="2367239594313909" type="System">
+                            <param id="0" name="Variable">nErro</param>
+                            <param id="1" name="Value">Numeros.valor</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="7168793721818011" type="System">
+                            <param id="0" name="Variable">vErro</param>
+                            <param id="1" name="Value">sp_vagao.UID</param>
+                        </action>
+                        <action id="0" name="Call function" sid="9917101848249482" type="Function">
+                            <param id="0" name="Name">&quot;addErroVagao&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action disabled="1" id="-16" name="Wait" sid="6866278685747347" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action disabled="1" id="-11" name="Subtract from" sid="9142531336832062" type="System">
+                            <param id="0" name="Variable">Pontos</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                        <action id="0" name="Set text" sid="1710835970079286" type="txt_pontuacao">
+                            <param id="0" name="Text">&quot;Erro &quot; &amp; Numeros.valor  &amp; &quot; UID &quot; &amp; Player.GetObjectID &amp;  &quot; lock: &quot; &amp; Numeros.LockTrem</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block disabled="1" sid="3299824958444686">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="3477731312453795" type="Numeros">
+                    <param id="0" name="Object">sp_vagao</param>
+                </condition>
+                <condition disabled="1" id="-14" name="Pick by unique ID" sid="979956576799569" type="Numeros">
+                    <param id="0" name="Unique ID">player.GetObjectID</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="2357350588488968" type="System">
+                    <param id="0" name="First value">Numeros.valor</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Second value">sp_vagao.valor</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="7555187384875476" type="Numeros">
+                    <param id="0" name="Instance variable">LockTrem</param>
+                </condition>
+                <condition disabled="1" id="-8" inverted="1" name="Is boolean instance variable set" sid="446246060283484" type="sp_vagao">
+                    <param id="0" name="Instance variable">PossuiNumero</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="4582529734090628" type="System">
+                    <param id="0" name="Variable">nErro</param>
+                    <param id="1" name="Value">Numeros.valor</param>
+                </action>
+                <action id="-9" name="Set value" sid="9085640730133138" type="System">
+                    <param id="0" name="Variable">vErro</param>
+                    <param id="1" name="Value">sp_vagao.UID</param>
+                </action>
+                <action id="0" name="Call function" sid="4747938955079259" type="Function">
+                    <param id="0" name="Name">&quot;addErroVagao&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action disabled="1" id="-16" name="Wait" sid="2782025752316058" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action disabled="1" id="-11" name="Subtract from" sid="6672207611142347" type="System">
+                    <param id="0" name="Variable">Pontos</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+                <action id="0" name="Set text" sid="586536196307243" type="txt_pontuacao">
+                    <param id="0" name="Text">&quot;Erro &quot; &amp; Numeros.valor  &amp; &quot; UID &quot; &amp; Player.GetObjectID &amp;  &quot; lock: &quot; &amp; Numeros.LockTrem</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block disabled="1" sid="5965715135497987">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="3974411629548203" type="sp_numero3">
+                    <param id="0" name="Object">sp_vagao</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="5256816107415505" type="System">
+                    <param id="0" name="First value">sp_numero3.valor</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">sp_vagao.valor</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="1292928375640562" type="sp_numero3">
+                    <param id="0" name="Instance variable">LockTrem</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="7784125437210088" type="Player">
+                    <param id="0" name="Instance variable">Get_Object</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="3957254120163168" type="sp_numero3">
+                    <param id="0" name="X">sp_vagao.X</param>
+                    <param id="1" name="Y">sp_vagao.Y</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="4121494165253232" type="sp_numero3">
+                    <param id="0" name="Pin to">sp_vagao</param>
+                    <param id="1" name="Mode">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="6601358652859843" type="sp_numero3">
+                    <param id="0" name="Instance variable">LockTrem</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="2900327607643818" type="txt_pontuacao">
+                    <param id="0" name="Text">&quot;Acerto &quot; &amp; sp_numero3.valor  &amp; &quot; UID &quot; &amp; sp_vagao.valor &amp;  &quot; lock: &quot; &amp; sp_numero3.LockTrem</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
